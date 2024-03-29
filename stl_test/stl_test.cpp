@@ -3,9 +3,23 @@
 
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+bool all_of(int* arr, int num, int size) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] != num) {
+            return false;
+        }
+        else if (arr[i] == num && i == size-1) {
+            return true;
+        }
+    }
+}
+
+int main() {
+    int arr[3] = { 4, 4, 4};
+    int num = 4;
+    int size = sizeof(arr) / sizeof(arr[0]);
+    all_of(arr, num, size);
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
