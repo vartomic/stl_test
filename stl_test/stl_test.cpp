@@ -1,34 +1,38 @@
-// stl_test.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 
 bool isPositive(int num) {
     if (num < 0) {
         return false;
     }
+    else { return true; }
 }
 
 bool isNegative(int num) {
     if (num > 0) {
         return false;
     }
+    else { return true; }
 }
 
 bool isEven(int num) {
     if (num % 2 != 0) {
         return false;
     }
+    else { return true; }
 }
 
-bool funcTest(bool userFunc(int par), int val) {
-    if (userFunc(val) != true) {
-        return false;
+bool all_of(int* array, int size, bool userFunc(int val)) {
+    for (int i = 0; i < size; i++) {
+        if (userFunc(array[i]) != true) {
+            return false;
+        }
     }
 }
 
 int main() {
-    bool res1 = funcTest(isPositive, 123);
-    bool res2 = funcTest(isNegative, -1);
-    bool res3 = funcTest(isEven, 2);
+    int array[3] = { 123, -1, 2 };
+    int arraySize = sizeof(array) / sizeof(array[0]);
+    bool res1 = all_of(array, arraySize, isPositive);
+    //bool res2 = all_of(array, arraySize, isNegative);
+    //bool res3 = all_of(array, arraySize, isEven);
 }
