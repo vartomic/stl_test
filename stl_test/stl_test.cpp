@@ -2,6 +2,7 @@
 
 bool isPositive(int num) {
     if (num < 0) {
+        std::cout << "Bad" << std::endl;
         return false;
     }
     else { return true; }
@@ -27,10 +28,11 @@ bool all_of(int* array, int size, bool userFunc(int val)) {
             return false;
         }
     }
+    return true;
 }
 
 int main() {
-    int array[3] = { 123, -1, 2 };
+    int array[3] = { 123, 1, 2 };
     int arraySize = sizeof(array) / sizeof(array[0]);
     bool res1 = all_of(array, arraySize, isPositive);
     //bool res2 = all_of(array, arraySize, isNegative);
