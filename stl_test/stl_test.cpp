@@ -32,14 +32,11 @@ bool all_of(int* array, int size, bool userFunc(int val)) {
 
 bool none_of(int* array, int size, bool userFunc(int val)) {
     for (int i = 0; i < size; i++) {
-        if (userFunc(array[i]) != true) {
-            i++;
-        }
-        else if (userFunc(array[i]) != true && i == size-1) {
-            return true;
+        if (userFunc(array[i]) == true) {
+            return false;
         }
     }
-    return false;
+    return true;
 }
 
 bool any_of(int* array, int size, bool userFunc(int val)) {
