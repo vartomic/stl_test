@@ -52,7 +52,7 @@ bool any_of(int* array, int size, bool userFunc(int val)) {
     }
     return false;
 }
-
+// ‘ункци€ возврашает количество элементов массива, удовлетвор€ющих условию пользовательской функции
 int count_of(int* array, int size, bool userFunc(int val)) {
     int count = 0;
     int countFalse = 0;
