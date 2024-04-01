@@ -53,9 +53,8 @@ bool any_of(int* array, int size, bool userFunc(int val)) {
     return false;
 }
 // ‘ункци€ возвращает количество элементов массива, удовлетвор€ющих условию пользовательской функции
-int count_of(int* array, int size, bool userFunc(int val)) {
+int count_if(int* array, int size, bool userFunc(int val)) {
     int count = 0;
-    int countFalse = 0;
     for (int i = 0; i < size; i++) {
         if (userFunc(array[i]) == true) {
             count++;
@@ -74,5 +73,5 @@ int main() {
     //bool res2 = none_of(array, arraySize, isNegative);
     //bool res3 = any_of(array, arraySize, isEven);
 
-    std::cout << count_of(array, arraySize, isEven) << std::endl;
+    std::cout << count_if(array, arraySize, isEven) << std::endl;
 }
