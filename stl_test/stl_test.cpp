@@ -53,6 +53,17 @@ bool any_of(int* array, int size, bool userFunc(int val)) {
     return false;
 }
 
+int count_of(int* array, int size, bool userFunc(int val)) {
+    int count = 0;
+    int countFalse = 0;
+    for (int i = 0; i < size; i++) {
+        if (userFunc(array[i]) == true) {
+            count++;
+        }
+    }
+    return count;
+}
+
 int main() {
     // Инициализация массива
     int array[3] = { 123, -1, 2 };
@@ -62,4 +73,6 @@ int main() {
     //bool res1 = all_of(array, arraySize, isPositive);
     //bool res2 = none_of(array, arraySize, isNegative);
     //bool res3 = any_of(array, arraySize, isEven);
+
+    std::cout << count_of(array, arraySize, isEven) << std::endl;
 }
