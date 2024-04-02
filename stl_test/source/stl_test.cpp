@@ -1,3 +1,4 @@
+#include<stdlib.h>
 #include "stl_test.h"
 
 // Функция возвращает false, если поступившее на вход функции число меньше нуля, и возвращает true, если число больше нуля.
@@ -74,6 +75,6 @@ int find_first_of(int* array1, int* array2, int size1, int size2) {
 }
 
 int generator() {
-    int val = 14;
+    int val = rand() % 100;
     return val;
 }

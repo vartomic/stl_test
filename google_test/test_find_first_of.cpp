@@ -14,7 +14,7 @@ TEST(TestCase_StlTest, Test_find_first_good) {
 
     int res = find_first_of(array1, array2, arraySize1, arraySize2);
 
-    EXPECT_EQ(3, 3);
+    EXPECT_EQ(res, 3);
 }
 
 TEST(TestCase_StlTest, Test_find_first_bad) {
@@ -30,5 +30,5 @@ TEST(TestCase_StlTest, Test_find_first_bad) {
 
     int res = find_first_of(array1, array2, arraySize1, arraySize2);
 
-    EXPECT_NE(3, 2);
+    EXPECT_NE(res, 3);
 }

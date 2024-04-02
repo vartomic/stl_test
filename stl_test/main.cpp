@@ -21,6 +21,5 @@ int main() {
     //std::cout << find_first_of(array1, array2, arraySize1, arraySize2) << std::endl;
 
     generate(array1, arraySize1, generator);
-
 }
 
