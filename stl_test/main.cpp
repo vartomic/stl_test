@@ -13,13 +13,18 @@ int main() {
 
     //std::cout << count_if(array, arraySize, isEven) << std::endl;
 
-    int array1[5] = { 0, 2, 3, 25, 5 };
+    int array1[32];
     int arraySize1 = sizeof(array1) / sizeof(array1[0]);
-    //int array2[4] = { 19, 10, 3, 4 };
-    //int arraySize2 = sizeof(array2) / sizeof(array2[0]);
+
+    generate(array1, arraySize1, generator);
+
+    int array2[8];
+    int arraySize2 = sizeof(array2) / sizeof(array2[0]);
+
+    generate(array2, arraySize2, generator);
 
     //std::cout << find_first_of(array1, array2, arraySize1, arraySize2) << std::endl;
 
-    generate(array1, arraySize1, generator);
+
 }
 
