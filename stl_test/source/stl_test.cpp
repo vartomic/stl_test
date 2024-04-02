@@ -1,4 +1,3 @@
-#include <iostream>
 #include "stl_test.h"
 
 // Функция возвращает false, если поступившее на вход функции число меньше нуля, и возвращает true, если число больше нуля.
@@ -66,18 +65,15 @@ int count_if(int* array, int size, bool userFunc(int val)) {
 int find_first_of(int* array1, int* array2, int size1, int size2) {
     for (int i = 0; i < size1; i++) {
         for (int j = 0; j < size2; j++) {
-            if (array1[i] != array2[j]) {
-                j++;
-            }
-            else if (array1[i] == array2[j]) {
+            if (array1[i] == array2[j]) {
                return array1[i];
-            }
-            else if (array1[i] != array2[j] && i == size1) {
-                array1[i++];
-            }
-            else {
-                return 0;
             }
         }
     }
+    return 0;
+}
+
+int generator() {
+    int val = 14;
+    return val;
 }

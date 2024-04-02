@@ -10,7 +10,7 @@ TEST(TestCase_StlTest, Test_none_of_good) {
 
     bool res = none_of(array, arraySize, isEven);
 
-  EXPECT_TRUE(res);
+    EXPECT_TRUE(res);
 }
 
 TEST(TestCase_StlTest, Test_none_of_bad) {
