@@ -64,17 +64,6 @@ int count_if(int* array, int size, bool userFunc(int val)) {
     return count;
 }
 
-//int find_first_of(int* array1, int* array2, int size1, int size2) {
-    //for (int i = 0; i < size1; i++) {
-    //    for (int j = 0; j < size2; j++) {
-    //        if (array1[i] == array2[j]) {
-    //           return array1[i];
-    //        }
-    //    }
-    //}
-    //return 0;
-//}
-
 int* find_first_of(int* first1, int* last1,
     int* first2, int* last2) {
 
@@ -90,6 +79,18 @@ int* find_first_of(int* first1, int* last1,
         }
     }
     return last1;
+}
+
+char* adjacent_find(char* first, char* last) {
+    int size = last - first;
+
+    for (int i = 0; i < size; i++) {
+        if (first[i] == first[i + 1]) {
+            //std::cout << first[i] << std::endl;
+            return &first[i];
+        }
+    }
+    return last;
 }
 
 int generator() {
