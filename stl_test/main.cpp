@@ -1,29 +1,45 @@
 #include <iostream>
+#include <algorithm>
 #include "stl_test.h"
 
 int main() {
-    // Инициализация массива
-    int array[3] = { 123, -1, 2 };
-    // Вычисление размера массива
-    int arraySize = sizeof(array) / sizeof(array[0]);
-
-    //bool res1 = all_of(array, arraySize, isPositive);
-    //bool res2 = none_of(array, arraySize, isNegative);
-    //bool res3 = any_of(array, arraySize, isEven);
-
-    //std::cout << count_if(array, arraySize, isEven) << std::endl;
 
     int array1[32];
-    int arraySize1 = sizeof(array1) / sizeof(array1[0]);
-
-    generate(array1, arraySize1, generator);
-
     int array2[8];
-    int arraySize2 = sizeof(array2) / sizeof(array2[0]);
 
-    generate(array2, arraySize2, generator);
+    int* first1 = std::begin(array1);
+    int* last1 = std::end(array1);
+    int* first2 = std::begin(array2);
+    int* last2 = std::end(array2);
 
-    //std::cout << find_first_of(array1, array2, arraySize1, arraySize2) << std::endl;
+    int size1 = std::distance(first1, last1);
+    int size2 = std::distance(first2, last2);
+
+    generate(first1, last1, generator);
+    generate(first2, last2, generator);
+
+    for (int i = 0; i < size1; i++) {
+        std::cout << first1[i] << ' ';
+    }
+    std::cout << " " << std::endl;
+
+    for (int i = 0; i < size2; i++) {
+        std::cout << first2[i] << ' ';
+    }
+    std::cout << " " << std::endl;
+
+    int* res1 = find_first_of(first1, last1, first2, last2);
+    int* res2 = std::find_first_of(first1, last1, first2, last2);
+
+
+
+    //for (int i = 0; i < arraySize2; i++) {
+    //    std::cout << array2[i] << ' ';
+    //}
+
+    //std::cout << " " << std::endl;
+
+    std::cout << find_first_of(first1, last1, first2, last2) << std::endl;
 
 
 }

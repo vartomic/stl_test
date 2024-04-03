@@ -1,4 +1,5 @@
 #include <random>
+#include <iostream>
 #include "stl_test.h"
 
 // Функция возвращает false, если поступившее на вход функции число меньше нуля, и возвращает true, если число больше нуля.
@@ -63,15 +64,32 @@ int count_if(int* array, int size, bool userFunc(int val)) {
     return count;
 }
 
-int find_first_of(int* array1, int* array2, int size1, int size2) {
+//int find_first_of(int* array1, int* array2, int size1, int size2) {
+    //for (int i = 0; i < size1; i++) {
+    //    for (int j = 0; j < size2; j++) {
+    //        if (array1[i] == array2[j]) {
+    //           return array1[i];
+    //        }
+    //    }
+    //}
+    //return 0;
+//}
+
+int* find_first_of(int* first1, int* last1,
+    int* first2, int* last2) {
+
+    int size1 = std::distance(first1, last1);
+    int size2 = std::distance(first2, last2);
+
     for (int i = 0; i < size1; i++) {
         for (int j = 0; j < size2; j++) {
-            if (array1[i] == array2[j]) {
-               return array1[i];
+            if (first1[i] == first2[j]) {
+                //std::cout << first1[i] << std::endl;
+                return &first1[i];
             }
         }
     }
-    return 0;
+    return last1;
 }
 
 int generator() {

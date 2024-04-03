@@ -1,8 +1,11 @@
 #include <iostream>
 #include "stl_test.h"
 
-void generate(int* array, int size, int generator()) {
+void generate(int* first, int* last, int generator()) {
+
+	int size = std::distance(first, last);
+
 	for (int i = 0; i < size; i++) {
-		array[i] == generator();	
+		first[i] = generator();	
 	}
 }

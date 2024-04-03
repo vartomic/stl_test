@@ -1,50 +1,28 @@
+#include <algorithm>
 #include "pch.h"
 #include "stl_test.h"
 
 TEST(TestCase_StlTest, Test_find_first_good) {
 
-    // Инициализация 1-го массива
-    int array1[5] = { 0, 2, 3, 25, 5 };
-    // Вычисление размера 1-го массива
-    int arraySize1 = sizeof(array1) / sizeof(array1[0]);
-    // Инициализация 2-го массива
-    int array2[4] = { 19, 10, 3, 4 };
-    // Вычисление размера 2-го массива
-    int arraySize2 = sizeof(array2) / sizeof(array2[0]);
+    int array1[32];
+    int array2[8];
 
-    int res = find_first_of(array1, array2, arraySize1, arraySize2);
+    int* first1 = std::begin(array1);
+    int* last1 = std::end(array1);
+    int* first2 = std::begin(array2);
+    int* last2 = std::end(array2);
 
-    EXPECT_EQ(res, 3);
-}
+    for (int i = 0; i < 100; i++) {
 
-TEST(TestCase_StlTest, Test_find_first_bad) {
+        generate(first1, last1, generator);
+        generate(first2, last2, generator);
 
-    // Инициализация 1-го массива
-    int array1[5] = { 0, 2, 2, 25, 5 };
-    // Вычисление размера 1-го массива
-    int arraySize1 = sizeof(array1) / sizeof(array1[0]);
-    // Инициализация 2-го массива
-    int array2[4] = { 19, 10, 3, 4 };
-    // Вычисление размера 2-го массива
-    int arraySize2 = sizeof(array2) / sizeof(array2[0]);
+        int size1 = std::distance(first1, last1);
+        int size2 = std::distance(first2, last2);
 
-    int res = find_first_of(array1, array2, arraySize1, arraySize2);
+        int* res1 = find_first_of(first1, last1, first2, last2);
+        int* res2 = std::find_first_of(first1, last1, first2, last2);
 
-    EXPECT_NE(res, 3);
-}
-
-TEST(TestCase_StlTest, Test_find_first_bad) {
-
-    // Инициализация 1-го массива
-    int array1[5] = { 0, 2, 2, 25, 5 };
-    // Вычисление размера 1-го массива
-    int arraySize1 = sizeof(array1) / sizeof(array1[0]);
-    // Инициализация 2-го массива
-    int array2[4] = { 19, 10, 3, 4 };
-    // Вычисление размера 2-го массива
-    int arraySize2 = sizeof(array2) / sizeof(array2[0]);
-
-    int res = find_first_of(array1, array2, arraySize1, arraySize2);
-
-    EXPECT_EQ (res, res);
+        EXPECT_EQ(res1, res2);
+    }    
 }
