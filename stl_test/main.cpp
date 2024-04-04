@@ -24,11 +24,20 @@ int main() {
     //std::cout << find_first_of(first1, last1, first2, last2) << std::endl;
 
 
-    char array[5] = {'a', 'b', 'c', 'c', 'd'};
+    //char array[5] = {'a', 'b', 'c', 'c', 'd'};
 
-    char* first = std::begin(array);
-    char* last = std::end(array);
+    //char* first = std::begin(array);
+    //char* last = std::end(array);
 
-    adjacent_find(first, last);
+    //adjacent_find(first, last);
+
+    char array[] = "abcxcde";
+
+    //std::cout << array << ' ';
+
+    char* pos_x = std::find(std::begin(array), std::end(array), 'x');
+
+    char* newEnd = remove_element(std::begin(array), std::end(array), pos_x);
+
 }
 

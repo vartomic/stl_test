@@ -9,5 +9,6 @@ bool any_of(int* array, int size, bool userFunc(int val));
 int count_if(int* array, int size, bool userFunc(int val));
 int* find_first_of(int* first1, int* last1, int* first2, int* last2);
 char* adjacent_find(char* first, char* last);
+char* remove_element(char* first, char* last, char* pos);
 int generator();
 void generate(int* first, int* last, int generator());

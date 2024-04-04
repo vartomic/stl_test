@@ -84,13 +84,21 @@ int* find_first_of(int* first1, int* last1,
 char* adjacent_find(char* first, char* last) {
     int size = last - first;
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size-1; i++) {
         if (first[i] == first[i + 1]) {
             //std::cout << first[i] << std::endl;
             return &first[i];
         }
     }
     return last;
+}
+
+char* remove_element(char* first, char* last, char* pos) {
+    int size = std::distance(first, last);
+    for (int i = 0; i < size; i++) {
+        pos[i] = pos[i+1];
+    }      
+    return pos;
 }
 
 int generator() {
